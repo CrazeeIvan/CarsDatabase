@@ -9,3 +9,14 @@ C:\Users\blue20\Documents\VSprojects\CarsDatabase\CarsDatabase\CarsDatabase\obj\
 C:\Users\blue20\Documents\VSprojects\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.csproj.GenerateResource.Cache
 C:\Users\blue20\Documents\VSprojects\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.exe
 C:\Users\blue20\Documents\VSprojects\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.pdb
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\bin\Debug\CarsDatabase.exe.config
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.exe
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.pdb
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\bin\Debug\Hire.mdf
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\bin\Debug\Hire_log.ldf
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\bin\Debug\CarsDatabase.exe
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\bin\Debug\CarsDatabase.pdb
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.Properties.Resources.resources
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.csproj.GenerateResource.Cache
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.frmCars.resources
