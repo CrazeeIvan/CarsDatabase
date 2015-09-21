@@ -45,10 +45,12 @@ namespace CarsDatabase
                     MessageBox.Show("Program requires a valid registration number!\nPlease try again. ");
                 }
             }
+                //Constraint specific exception catch, to prevent the user from input an invalid entry with tailored feedback to this error.
             catch (ConstraintException exCon)
             {
                 MessageBox.Show("That Vehicle Registration Number already exists.\n" + "Original Error:\n" + exCon.Message);
             }
+            //General exception catch, to prevent the user from input an invalid entry with tailored feedback to this error.
             catch (Exception ex)
             {
                 MessageBox.Show("The program encountered an error.\n" + "Original Error:\n" + ex.Message);
@@ -56,6 +58,7 @@ namespace CarsDatabase
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //Creates a new entry in the database and awaits user input for confirmation.
             try
             {
                 this.tblCarBindingSource.AddNew();
@@ -78,8 +81,25 @@ namespace CarsDatabase
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            hireDataSet.tblCar[tblCarBindingSource.Position].Delete();
-            updatePosition();
+            DialogResult dlgDeleteConfirmationResult;
+            dlgDeleteConfirmationResult = MessageBox.Show("Are you sure you want to delete this patient?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dlgDeleteConfirmationResult == DialogResult.OK)
+            {
+                try
+                {
+                    this.tblCarBindingSource.RemoveCurrent();
+                    updatePosition();
+                    MessageBox.Show("Delete successful.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Delete failed. Is your database empty?\n" + "Original error:\n" + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Delete cancelled.");
+            }
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -115,13 +135,6 @@ namespace CarsDatabase
         {
             tblCarBindingSource.MovePrevious();
             updatePosition();
-        }
-        private void disableInput()
-        {
-            btnNext.Enabled = false;
-            btnPrevious.Enabled = false;
-            btnFirst.Enabled = false;
-            btnLast.Enabled = false;
         }
     }
     

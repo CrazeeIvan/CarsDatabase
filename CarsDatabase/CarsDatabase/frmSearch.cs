@@ -32,6 +32,7 @@ namespace CarsDatabase
             {
                 try
                 {
+                    //Builds a string with the pre-set format to match the table layout. FillBy querybuilder option was considered but this was found to be more efficient.
                     string strMyQuery = String.Format("SELECT VehicleRegNo, Make, EngineSize, DateRegistered, '€' + CAST(RentalDay AS varchar) AS RentalDay, Available FROM tblCar WHERE {0} {1} @Third", cboField.SelectedItem, cboOperator.SelectedItem);
 
                     SqlConnection cnMyConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Hire.mdf;Integrated Security=True");
@@ -56,28 +57,29 @@ namespace CarsDatabase
                         MessageBox.Show("Unable to find a match for your query, please try again!");
                     }
                 }
-
+                //Catch an SQL specific crash and return appropriate feedback to the user.
                 catch (SqlException sqlEx)
                 {
-                    MessageBox.Show("Error in your query!\n" + "Original Error:\n" + sqlEx.Message);
+                    MessageBox.Show("Program encountered an error in your query!\n" + "Original Error:\n" + sqlEx.Message);
                 }
-
+                //Catch a general crash and return appropriate feedback to the user.
                 catch (Exception ex)
                 {
                     MessageBox.Show("Program encountered an error.\n" + "Original Error:\n" + ex.Message);
                 }
             }
-
+                //Error Feedback if user doesn't specify a search value.
             else
             {
                 MessageBox.Show("You need to enter value text!");
             }
         }
-
+        //Closes the form
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        //Populates combo-boxes.
         private void fillBoxes()
         {
             cboField.Items.Add("Make");
