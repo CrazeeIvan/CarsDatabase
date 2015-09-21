@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CarsDatabase
 {
@@ -21,47 +22,48 @@ namespace CarsDatabase
         {
             // TODO: This line of code loads data into the 'hireDataSet.tblCar' table. You can move, or remove it, as needed.
             this.tblCarTableAdapter.Fill(this.hireDataSet.tblCar);
-
+            fillBoxes();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (valueTextBox.Text != "")
+            if (txtValue.Text != "")
             {
                 try
                 {
-                    string sql = String.Format("SELECT VehicleRegNo, Make, EngineSize, DateRegistered, '€' + CAST(RentalPerDay AS varchar) AS RentalPerDay, Available FROM tblCar WHERE {0} {1} @Third", fieldComboBox.SelectedItem, operatorComboBox.SelectedItem);
+                    string strMyQuery = String.Format("SELECT VehicleRegNo, Make, EngineSize, DateRegistered, '€' + CAST(RentalDay AS varchar) AS RentalDay, Available FROM tblCar WHERE {0} {1} @Third", cboField.SelectedItem, cboOperator.SelectedItem);
 
-                    SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Hire.mdf;Integrated Security=True");
-                    connection.Open();
-                    SqlCommand command = connection.CreateCommand();
+                    SqlConnection cnMyConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Hire.mdf;Integrated Security=True");
+                    cnMyConnection.Open();
+                    SqlCommand command = cnMyConnection.CreateCommand();
 
 
                     command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@Third", valueTextBox.Text);
+                    command.Parameters.AddWithValue("@Third", txtValue.Text);
 
-                    command.CommandText = sql;
+                    command.CommandText = strMyQuery;
                     command.ExecuteNonQuery();
 
                     DataTable table = new DataTable();
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                     dataAdapter.Fill(table);
-                    tblCarDataGridView.DataSource = table;
+                    dgvSearchGrid.DataSource = table;
+                    dgvSearchGrid.DataMember = "tblCar";
 
-                    if (tblCarDataGridView.Rows.Count == 0)
+                    if (dgvSearchGrid.Rows.Count == 0)
                     {
-                        MessageBox.Show("There is no match!");
+                        MessageBox.Show("Unable to find a match for your query, please try again!");
                     }
                 }
 
-                catch (SqlException)
+                catch (SqlException sqlEx)
                 {
-                    MessageBox.Show("Error in your query!");
+                    MessageBox.Show("Error in your query!\n" + "Original Error:\n" + sqlEx.Message);
                 }
 
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Somthing is wrong, try again");
+                    MessageBox.Show("Program encountered an error.\n" + "Original Error:\n" + ex.Message);
                 }
             }
 
@@ -75,6 +77,20 @@ namespace CarsDatabase
         {
             this.Close();
         }
+        private void fillBoxes()
+        {
+            cboField.Items.Add("Make");
+            cboField.Items.Add("EngineSize");
+            cboField.Items.Add("RentalPerDay");
+            cboField.Items.Add("Available");
+            cboField.SelectedIndex = 0;
+
+            cboOperator.Items.Add("=");
+            cboOperator.Items.Add("<");
+            cboOperator.Items.Add(">");
+            cboOperator.Items.Add("<=");
+            cboOperator.Items.Add(">=");
+            cboOperator.SelectedIndex = 0;
         }
     }
 }

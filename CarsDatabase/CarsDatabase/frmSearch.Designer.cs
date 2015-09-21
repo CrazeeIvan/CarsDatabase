@@ -29,58 +29,44 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hireDataSet = new CarsDatabase.HireDataSet();
-            this.tblCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblCarTableAdapter = new CarsDatabase.HireDataSetTableAdapters.tblCarTableAdapter();
+            this.dgvSearchGrid = new System.Windows.Forms.DataGridView();
             this.vehicleRegNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.makeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.engineSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRegisteredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentalDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.availableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboField = new System.Windows.Forms.ComboBox();
+            this.tblCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hireDataSet = new CarsDatabase.HireDataSet();
+            this.tblCarTableAdapter = new CarsDatabase.HireDataSetTableAdapters.tblCarTableAdapter();
+            this.gbSearchParameters = new System.Windows.Forms.GroupBox();
+            this.txtValue = new System.Windows.Forms.TextBox();
             this.cboOperator = new System.Windows.Forms.ComboBox();
+            this.cboField = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hireDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCarBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hireDataSet)).BeginInit();
+            this.gbSearchParameters.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvSearchGrid
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSearchGrid.AutoGenerateColumns = false;
+            this.dgvSearchGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.vehicleRegNoDataGridViewTextBoxColumn,
             this.makeDataGridViewTextBoxColumn,
             this.engineSizeDataGridViewTextBoxColumn,
             this.dateRegisteredDataGridViewTextBoxColumn,
             this.rentalDayDataGridViewTextBoxColumn,
             this.availableDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.tblCarBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 151);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // hireDataSet
-            // 
-            this.hireDataSet.DataSetName = "HireDataSet";
-            this.hireDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblCarBindingSource
-            // 
-            this.tblCarBindingSource.DataMember = "tblCar";
-            this.tblCarBindingSource.DataSource = this.hireDataSet;
-            // 
-            // tblCarTableAdapter
-            // 
-            this.tblCarTableAdapter.ClearBeforeFill = true;
+            this.dgvSearchGrid.DataSource = this.tblCarBindingSource;
+            this.dgvSearchGrid.Location = new System.Drawing.Point(12, 151);
+            this.dgvSearchGrid.Name = "dgvSearchGrid";
+            this.dgvSearchGrid.Size = new System.Drawing.Size(644, 150);
+            this.dgvSearchGrid.TabIndex = 0;
             // 
             // vehicleRegNoDataGridViewTextBoxColumn
             // 
@@ -118,25 +104,37 @@
             this.availableDataGridViewCheckBoxColumn.HeaderText = "Available";
             this.availableDataGridViewCheckBoxColumn.Name = "availableDataGridViewCheckBoxColumn";
             // 
-            // groupBox1
+            // tblCarBindingSource
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.cboOperator);
-            this.groupBox1.Controls.Add(this.cboField);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 100);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.tblCarBindingSource.DataMember = "tblCar";
+            this.tblCarBindingSource.DataSource = this.hireDataSet;
             // 
-            // cboField
+            // hireDataSet
             // 
-            this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(6, 72);
-            this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(121, 21);
-            this.cboField.TabIndex = 0;
+            this.hireDataSet.DataSetName = "HireDataSet";
+            this.hireDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblCarTableAdapter
+            // 
+            this.tblCarTableAdapter.ClearBeforeFill = true;
+            // 
+            // gbSearchParameters
+            // 
+            this.gbSearchParameters.Controls.Add(this.txtValue);
+            this.gbSearchParameters.Controls.Add(this.cboOperator);
+            this.gbSearchParameters.Controls.Add(this.cboField);
+            this.gbSearchParameters.Location = new System.Drawing.Point(13, 13);
+            this.gbSearchParameters.Name = "gbSearchParameters";
+            this.gbSearchParameters.Size = new System.Drawing.Size(431, 100);
+            this.gbSearchParameters.TabIndex = 1;
+            this.gbSearchParameters.TabStop = false;
+            // 
+            // txtValue
+            // 
+            this.txtValue.Location = new System.Drawing.Point(325, 73);
+            this.txtValue.Name = "txtValue";
+            this.txtValue.Size = new System.Drawing.Size(100, 20);
+            this.txtValue.TabIndex = 2;
             // 
             // cboOperator
             // 
@@ -146,22 +144,23 @@
             this.cboOperator.Size = new System.Drawing.Size(121, 21);
             this.cboOperator.TabIndex = 1;
             // 
+            // cboField
+            // 
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(6, 72);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(121, 21);
+            this.cboField.TabIndex = 0;
+            // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(579, 13);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(325, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
             // 
             // btnClose
             // 
@@ -169,7 +168,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "button1";
+            this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -180,23 +179,23 @@
             this.ClientSize = new System.Drawing.Size(691, 364);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gbSearchParameters);
+            this.Controls.Add(this.dgvSearchGrid);
             this.Name = "frmSearch";
             this.Text = "frmSearch";
             this.Load += new System.EventHandler(this.frmSearch_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hireDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCarBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hireDataSet)).EndInit();
+            this.gbSearchParameters.ResumeLayout(false);
+            this.gbSearchParameters.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSearchGrid;
         private HireDataSet hireDataSet;
         private System.Windows.Forms.BindingSource tblCarBindingSource;
         private HireDataSetTableAdapters.tblCarTableAdapter tblCarTableAdapter;
@@ -206,11 +205,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRegisteredDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentalDayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn availableDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbSearchParameters;
         private System.Windows.Forms.ComboBox cboOperator;
         private System.Windows.Forms.ComboBox cboField;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValue;
         private System.Windows.Forms.Button btnClose;
     }
 }

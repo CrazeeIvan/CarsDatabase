@@ -42,18 +42,23 @@ namespace CarsDatabase
                     this.Validate();
                     this.tblCarBindingSource.EndEdit();
                     this.tblCarTableAdapter.Update(this.hireDataSet.tblCar);
-                    MessageBox.Show("Update successful");
+                    MessageBox.Show("Update successful!");
                 }
 
                 else
                 {
-                    MessageBox.Show("Vehicle Registration Number can't be empty");
+                    MessageBox.Show("Program requires a valid registration number!\nPlease try again. ");
                 }
             }
 
-            catch (ConstraintException)
+
+            catch (ConstraintException exCon)
             {
-                MessageBox.Show("That Vehicle Registration Number already exists");
+                MessageBox.Show("That Vehicle Registration Number already exists.\n" + "Original Error:\n" + exCon.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The program encountered an error.\n" + "Original Error:\n" + ex.Message);
             }
         }
 
@@ -77,13 +82,11 @@ namespace CarsDatabase
             {
                 MessageBox.Show("Error updating database.\n" + "Original Error:\n" + ex.Message);
             }
-
         }
         private void updatePosition()
         {
             txtPosition.Text = tblCarBindingSource.Position + 1 + " of " + tblCarBindingSource.Count;
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             hireDataSet.tblCar[tblCarBindingSource.Position].Delete();
@@ -102,6 +105,32 @@ namespace CarsDatabase
             hireDataSet.RejectChanges();
             tblCarBindingSource.ResetBindings(false);
             updatePosition(); 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            tblCarBindingSource.MoveNext();
+            updatePosition();
+        }
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            tblCarBindingSource.MoveLast();
+            updatePosition();
+        }
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            tblCarBindingSource.MoveFirst();
+            updatePosition();
+        }
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            tblCarBindingSource.MovePrevious();
+            updatePosition();
         }
     }
 }

@@ -20,3 +20,4 @@ C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDat
 C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.Properties.Resources.resources
 C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.csproj.GenerateResource.Cache
 C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.frmCars.resources
+C:\Users\User\Documents\CarsDatabase\CarsDatabase\CarsDatabase\obj\Debug\CarsDatabase.frmSearch.resources

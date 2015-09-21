@@ -354,6 +354,7 @@
             this.btnExit.TabIndex = 18;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnFirst
             // 
@@ -363,6 +364,7 @@
             this.btnFirst.TabIndex = 19;
             this.btnFirst.Text = "&First";
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
@@ -372,6 +374,7 @@
             this.btnPrevious.TabIndex = 20;
             this.btnPrevious.Text = "&Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -381,6 +384,7 @@
             this.btnNext.TabIndex = 21;
             this.btnNext.Text = "&Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -390,6 +394,7 @@
             this.btnLast.TabIndex = 22;
             this.btnLast.Text = "&Last";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // txtPosition
             // 
