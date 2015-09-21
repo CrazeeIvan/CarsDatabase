@@ -67,6 +67,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.txtPosition = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             vehicleRegNoLabel = new System.Windows.Forms.Label();
             makeLabel = new System.Windows.Forms.Label();
             engineSizeLabel = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
             // vehicleRegNoLabel
             // 
             vehicleRegNoLabel.AutoSize = true;
-            vehicleRegNoLabel.Location = new System.Drawing.Point(26, 95);
+            vehicleRegNoLabel.Location = new System.Drawing.Point(8, 131);
             vehicleRegNoLabel.Name = "vehicleRegNoLabel";
             vehicleRegNoLabel.Size = new System.Drawing.Size(85, 13);
             vehicleRegNoLabel.TabIndex = 1;
@@ -91,7 +92,7 @@
             // makeLabel
             // 
             makeLabel.AutoSize = true;
-            makeLabel.Location = new System.Drawing.Point(26, 121);
+            makeLabel.Location = new System.Drawing.Point(8, 157);
             makeLabel.Name = "makeLabel";
             makeLabel.Size = new System.Drawing.Size(37, 13);
             makeLabel.TabIndex = 3;
@@ -100,7 +101,7 @@
             // engineSizeLabel
             // 
             engineSizeLabel.AutoSize = true;
-            engineSizeLabel.Location = new System.Drawing.Point(26, 147);
+            engineSizeLabel.Location = new System.Drawing.Point(8, 183);
             engineSizeLabel.Name = "engineSizeLabel";
             engineSizeLabel.Size = new System.Drawing.Size(66, 13);
             engineSizeLabel.TabIndex = 5;
@@ -109,7 +110,7 @@
             // dateRegisteredLabel
             // 
             dateRegisteredLabel.AutoSize = true;
-            dateRegisteredLabel.Location = new System.Drawing.Point(26, 174);
+            dateRegisteredLabel.Location = new System.Drawing.Point(8, 210);
             dateRegisteredLabel.Name = "dateRegisteredLabel";
             dateRegisteredLabel.Size = new System.Drawing.Size(87, 13);
             dateRegisteredLabel.TabIndex = 7;
@@ -118,16 +119,16 @@
             // rentalDayLabel
             // 
             rentalDayLabel.AutoSize = true;
-            rentalDayLabel.Location = new System.Drawing.Point(26, 199);
+            rentalDayLabel.Location = new System.Drawing.Point(8, 235);
             rentalDayLabel.Name = "rentalDayLabel";
-            rentalDayLabel.Size = new System.Drawing.Size(63, 13);
+            rentalDayLabel.Size = new System.Drawing.Size(82, 13);
             rentalDayLabel.TabIndex = 9;
-            rentalDayLabel.Text = "Rental Day:";
+            rentalDayLabel.Text = "Rental Per Day:";
             // 
             // availableLabel
             // 
             availableLabel.AutoSize = true;
-            availableLabel.Location = new System.Drawing.Point(26, 227);
+            availableLabel.Location = new System.Drawing.Point(8, 263);
             availableLabel.Name = "availableLabel";
             availableLabel.Size = new System.Drawing.Size(53, 13);
             availableLabel.TabIndex = 11;
@@ -176,7 +177,7 @@
             this.tblCarBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tblCarBindingNavigator.Name = "tblCarBindingNavigator";
             this.tblCarBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tblCarBindingNavigator.Size = new System.Drawing.Size(847, 25);
+            this.tblCarBindingNavigator.Size = new System.Drawing.Size(633, 25);
             this.tblCarBindingNavigator.TabIndex = 0;
             this.tblCarBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -250,164 +251,177 @@
             // txtVehicleReg
             // 
             this.txtVehicleReg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblCarBindingSource, "VehicleRegNo", true));
-            this.txtVehicleReg.Location = new System.Drawing.Point(119, 92);
+            this.txtVehicleReg.Location = new System.Drawing.Point(101, 128);
             this.txtVehicleReg.Name = "txtVehicleReg";
             this.txtVehicleReg.Size = new System.Drawing.Size(200, 20);
-            this.txtVehicleReg.TabIndex = 2;
+            this.txtVehicleReg.TabIndex = 1;
             // 
             // txtMake
             // 
             this.txtMake.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblCarBindingSource, "Make", true));
-            this.txtMake.Location = new System.Drawing.Point(119, 118);
+            this.txtMake.Location = new System.Drawing.Point(101, 154);
             this.txtMake.Name = "txtMake";
             this.txtMake.Size = new System.Drawing.Size(200, 20);
-            this.txtMake.TabIndex = 4;
+            this.txtMake.TabIndex = 2;
             // 
             // txtEngineSize
             // 
             this.txtEngineSize.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblCarBindingSource, "EngineSize", true));
-            this.txtEngineSize.Location = new System.Drawing.Point(119, 144);
+            this.txtEngineSize.Location = new System.Drawing.Point(101, 180);
             this.txtEngineSize.Name = "txtEngineSize";
             this.txtEngineSize.Size = new System.Drawing.Size(200, 20);
-            this.txtEngineSize.TabIndex = 6;
+            this.txtEngineSize.TabIndex = 3;
             // 
             // dtDateRegistered
             // 
             this.dtDateRegistered.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblCarBindingSource, "DateRegistered", true));
-            this.dtDateRegistered.Location = new System.Drawing.Point(119, 170);
+            this.dtDateRegistered.Location = new System.Drawing.Point(101, 206);
             this.dtDateRegistered.Name = "dtDateRegistered";
             this.dtDateRegistered.Size = new System.Drawing.Size(200, 20);
-            this.dtDateRegistered.TabIndex = 8;
+            this.dtDateRegistered.TabIndex = 4;
             // 
             // txtRentalDay
             // 
             this.txtRentalDay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblCarBindingSource, "RentalDay", true));
-            this.txtRentalDay.Location = new System.Drawing.Point(119, 196);
+            this.txtRentalDay.Location = new System.Drawing.Point(101, 232);
             this.txtRentalDay.Name = "txtRentalDay";
             this.txtRentalDay.Size = new System.Drawing.Size(200, 20);
-            this.txtRentalDay.TabIndex = 10;
+            this.txtRentalDay.TabIndex = 5;
             // 
             // chkAvailable
             // 
             this.chkAvailable.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.tblCarBindingSource, "Available", true));
-            this.chkAvailable.Location = new System.Drawing.Point(119, 222);
+            this.chkAvailable.Location = new System.Drawing.Point(101, 258);
             this.chkAvailable.Name = "chkAvailable";
             this.chkAvailable.Size = new System.Drawing.Size(200, 24);
-            this.chkAvailable.TabIndex = 12;
+            this.chkAvailable.TabIndex = 6;
             this.chkAvailable.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(421, 82);
+            this.btnUpdate.Location = new System.Drawing.Point(540, 121);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(421, 111);
+            this.btnAdd.Location = new System.Drawing.Point(540, 150);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 14;
+            this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(421, 140);
+            this.btnDelete.Location = new System.Drawing.Point(540, 179);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 15;
+            this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(421, 169);
+            this.btnSearch.Location = new System.Drawing.Point(540, 208);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 16;
+            this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(421, 198);
+            this.btnCancel.Location = new System.Drawing.Point(540, 237);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(421, 227);
+            this.btnExit.Location = new System.Drawing.Point(540, 266);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 18;
-            this.btnExit.Text = "&Exit";
+            this.btnExit.TabIndex = 16;
+            this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(29, 267);
+            this.btnFirst.Location = new System.Drawing.Point(11, 303);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(75, 23);
-            this.btnFirst.TabIndex = 19;
-            this.btnFirst.Text = "&First";
+            this.btnFirst.TabIndex = 7;
+            this.btnFirst.Text = "<< &First";
             this.btnFirst.UseVisualStyleBackColor = true;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(111, 267);
+            this.btnPrevious.Location = new System.Drawing.Point(93, 303);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 23);
-            this.btnPrevious.TabIndex = 20;
-            this.btnPrevious.Text = "&Previous";
+            this.btnPrevious.TabIndex = 8;
+            this.btnPrevious.Text = "< &Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(244, 267);
+            this.btnNext.Location = new System.Drawing.Point(226, 303);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 21;
-            this.btnNext.Text = "&Next";
+            this.btnNext.TabIndex = 9;
+            this.btnNext.Text = "&Next >";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(326, 267);
+            this.btnLast.Location = new System.Drawing.Point(308, 303);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(75, 23);
-            this.btnLast.TabIndex = 22;
-            this.btnLast.Text = "&Last";
+            this.btnLast.TabIndex = 10;
+            this.btnLast.Text = "&Last >>";
             this.btnLast.UseVisualStyleBackColor = true;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(192, 270);
+            this.txtPosition.Enabled = false;
+            this.txtPosition.Location = new System.Drawing.Point(174, 306);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(46, 20);
             this.txtPosition.TabIndex = 23;
+            this.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(167, 48);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(242, 38);
+            this.lblTitle.TabIndex = 24;
+            this.lblTitle.Text = "Bowman Car Hire";
             // 
             // frmCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 527);
+            this.ClientSize = new System.Drawing.Size(633, 343);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnNext);
@@ -478,6 +492,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 

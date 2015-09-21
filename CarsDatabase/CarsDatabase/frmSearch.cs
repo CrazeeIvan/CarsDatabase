@@ -23,6 +23,7 @@ namespace CarsDatabase
             // TODO: This line of code loads data into the 'hireDataSet.tblCar' table. You can move, or remove it, as needed.
             this.tblCarTableAdapter.Fill(this.hireDataSet.tblCar);
             fillBoxes();
+            this.Text = "Task A Search - Ciarán Maher - " + DateTime.Now;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -35,20 +36,20 @@ namespace CarsDatabase
 
                     SqlConnection cnMyConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Hire.mdf;Integrated Security=True");
                     cnMyConnection.Open();
-                    SqlCommand command = cnMyConnection.CreateCommand();
+                    SqlCommand cmMySQLcommand = cnMyConnection.CreateCommand();
 
 
-                    command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@Third", txtValue.Text);
+                    cmMySQLcommand.CommandType = CommandType.Text;
+                    cmMySQLcommand.Parameters.AddWithValue("@Third", txtValue.Text);
 
-                    command.CommandText = strMyQuery;
-                    command.ExecuteNonQuery();
+                    cmMySQLcommand.CommandText = strMyQuery;
+                    cmMySQLcommand.ExecuteNonQuery();
 
                     DataTable table = new DataTable();
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmMySQLcommand);
                     dataAdapter.Fill(table);
                     dgvSearchGrid.DataSource = table;
-                    dgvSearchGrid.DataMember = "tblCar";
+                    //dgvSearchGrid.DataMember = "tblCar";
 
                     if (dgvSearchGrid.Rows.Count == 0)
                     {
